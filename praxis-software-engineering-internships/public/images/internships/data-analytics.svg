@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" fill="none">
+  <!-- Background Canvas -->
+  <rect width="800" height="600" rx="16" fill="#F8FAFC"/>
+  <circle cx="670" cy="130" r="80" fill="#EFF6FF" opacity="0.8"/>
+  <circle cx="120" cy="460" r="80" fill="#E2E8F0" opacity="0.6"/>
+
+  <!-- Analytics & SQL Console Panel -->
+  <g transform="translate(120, 95)">
+    <!-- Main Shell -->
+    <rect width="560" height="340" rx="12" fill="#0F172A" filter="drop-shadow(0 20px 25px rgba(15,23,42,0.15))"/>
+    
+    <!-- Top Header -->
+    <rect width="560" height="42" rx="12" fill="#1E293B"/>
+    <rect y="32" width="560" height="10" fill="#1E293B"/>
+    <circle cx="24" cy="21" r="5" fill="#EF4444"/>
+    <circle cx="42" cy="21" r="5" fill="#F59E0B"/>
+    <circle cx="60" cy="21" r="5" fill="#10B981"/>
+    <text x="90" y="25" fill="#94A3B8" font-family="monospace" font-size="11" font-weight="600">query_aggregation.sql</text>
+
+    <!-- Query Snippet -->
+    <g transform="translate(30, 60)">
+      <rect width="500" height="44" rx="6" fill="#111827"/>
+      <text x="18" y="22" fill="#38BDF8" font-family="monospace" font-size="11">SELECT timestamp, cohort, AVG(latency_ms) AS p50</text>
+      <text x="18" y="38" fill="#F1F5F9" font-family="monospace" font-size="11">FROM telemetry_events GROUP BY 1, 2 ORDER BY 1 DESC;</text>
+    </g>
+
+    <!-- Visual Chart Grid & Time-Series Graph -->
+    <g transform="translate(30, 125)">
+      <!-- Chart Canvas inside dark frame -->
+      <rect width="500" height="185" rx="8" fill="#1E293B"/>
+      
+      <!-- Grid Lines -->
+      <line x1="40" y1="35" x2="470" y2="35" stroke="#334155" stroke-dasharray="2 3"/>
+      <line x1="40" y1="75" x2="470" y2="75" stroke="#334155" stroke-dasharray="2 3"/>
+      <line x1="40" y1="115" x2="470" y2="115" stroke="#334155" stroke-dasharray="2 3"/>
+      <line x1="40" y1="155" x2="470" y2="155" stroke="#475569" stroke-width="1.5"/>
+
+      <!-- Bar Columns in Chart -->
+      <rect x="65" y="100" width="22" height="55" rx="3" fill="#334155"/>
+      <rect x="115" y="70" width="22" height="85" rx="3" fill="#2563EB"/>
+      <rect x="165" y="85" width="22" height="70" rx="3" fill="#334155"/>
+      <rect x="215" y="55" width="22" height="100" rx="3" fill="#2563EB"/>
+      <rect x="265" y="65" width="22" height="90" rx="3" fill="#334155"/>
+      <rect x="315" y="45" width="22" height="110" rx="3" fill="#2563EB"/>
+      <rect x="365" y="60" width="22" height="95" rx="3" fill="#334155"/>
+      <rect x="415" y="30" width="22" height="125" rx="3" fill="#38BDF8"/>
+
+      <!-- Smooth Trend Spline Line -->
+      <path d="M76 95 Q 126 60, 176 80 T 276 60 T 376 50 T 426 25" stroke="#60A5FA" stroke-width="3" fill="none"/>
+      <circle cx="426" cy="25" r="5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Metric Summary Floating Card -->
+  <g transform="translate(480, 365)">
+    <rect width="215" height="120" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.06))"/>
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#EFF6FF"/>
+    <path d="M26 38 L32 28 L38 32 L44 24" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="64" y="20" width="100" height="10" rx="3" fill="#0F172A"/>
+    <rect x="64" y="36" width="70" height="8" rx="3" fill="#94A3B8"/>
+    <line x1="16" y1="66" x2="199" y2="66" stroke="#F1F5F9" stroke-width="1.5"/>
+    <rect x="16" y="80" width="80" height="22" rx="4" fill="#2563EB"/>
+    <rect x="105" y="80" width="60" height="22" rx="4" fill="#F8FAFC"/>
+  </g>
+</svg>
